@@ -1,0 +1,17 @@
+<h1>Image Board</h1>
+
+<form action="/home/upload" method="post" enctype="multipart/form-data">
+    제목 : <input type="text" name="inputTitle"><br>
+    내용 : <input type="text" name="inputContent"><br>
+    <input type="file" name="inputImage" accept="image/*">
+    <input type="submit" value="작성">
+</form>
+
+<hr>
+<% @everyPost.each do |pp| %>
+    제목 : <%= pp.title %><br>
+    내용 : <%= pp.content %><br>
+    
+    <img src="<%= pp.image_url %>"><hr>
+    
+<% end %>
